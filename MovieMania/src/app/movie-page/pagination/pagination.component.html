@@ -1,0 +1,22 @@
+<ul class="pagination">
+
+    <li class="page-item">
+        <a class="page-link" (click)="changePage(1)"> << First </a>
+    </li>
+
+    <li class="page-item" [ngClass]="{'disabled' : activePage == 1}">
+        <a class="page-link" (click)="changePage( activePage - 1)" >Previous</a>
+    </li>
+
+    <li class="page-item" *ngFor="let page of pages; let i = index" [ngClass]="{'active': activePage == i+1}">
+        <a class="page-link" (click)="changePage(i+1)">{{i+1}}</a>
+    </li>
+
+    <li class="page-item" [ngClass]="{'disabled': activePage == pageCount}">
+        <a class="page-link" (click)="changePage( activePage + 1)"  >Next</a>
+    </li>
+
+    <li class="page-item">
+        <a class="page-link" (click)="changePage(pageCount)"> Last >> </a>
+    </li>   
+</ul>

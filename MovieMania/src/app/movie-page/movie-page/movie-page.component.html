@@ -1,0 +1,20 @@
+<div *ngIf="display">
+    <div class="row">
+        <div class="col-6 text-center">
+            <app-pagination [pageSizeInput]="parametriUgradjeni?.pageSize" [totalItems]="movieList?.count" (emiterChangePage)="getMovies($event)"></app-pagination>
+        </div>
+    
+        <div class="col-6">
+            <app-sorting (changeSortValueEmiter)="getMovies($event)" [sortDirectionInput]="parametriUgradjeni?.sortDirection"></app-sorting>
+        </div>
+    </div>
+    
+    <div>
+        <div class="row"  *ngFor="let movie of movieList?.results">
+            <div class="col">
+                <app-movie [inputMovie]="movie"></app-movie>
+            </div>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="background" (click)="openDetails()">
+    <h3><b>{{inputMovie.name}} ({{inputMovie.year}})</b></h3>
+    <p><small>{{inputMovie.description}}</small></p>
+
+    <div class="row">
+        <div class="col-11 ml-auto">
+            <img src="assets/images/gold_star.png"> {{inputMovie.rating}}
+        </div>
+        
+        <div class="col-1 mr-auto">
+            {{inputMovie.duration}}mins
+        </div>
+    </div>
+</div>
